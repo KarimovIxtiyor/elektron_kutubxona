@@ -1,0 +1,24 @@
+<title>Muallif kiritish</title>
+
+</head>
+
+<h2>{% extends 'kutubxona/base.html' %}</h2>
+
+{#{% load crispy_forms_tags %}#}
+
+{% block content %}
+
+<body>
+   <h3>Kitobni o`chirish</h3>
+   <form method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+       <p>"{{ books.title }}"  kitobni o`chiraymi? </p>
+        <button type='submit'>O`chirish</button>
+
+    </form>
+
+</body>
+
+{% endblock content %}
+</html>

@@ -1,0 +1,24 @@
+
+<title>Kitob kiritish</title>
+
+</head>
+
+<h2>{% extends 'kutubxona/base.html' %}</h2>
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body>
+   <h3>Kitob qo`shish</h3>
+   <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit'>Qo`shish</button>
+
+    </form>
+
+</body>
+
+{% endblock content %}
+</html>

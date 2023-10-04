@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Royxattan otish</title>
+</head>
+<body>
+   <h3>Royxattan otish</h3>
+   <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit'>Kirish</button>
+
+    </form>
+
+</body>
+</html>

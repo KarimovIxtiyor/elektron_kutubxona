@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Elektron Kutubxona{% endblock title %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+        <h3>Elektron Kutubxona</h3>
+    </a>
+      <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" name="search" value="{{ search }}"
+             placeholder="Ma'lumot izlash" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <h6 class="card-subtitle mb-2 text-muted"> <a href="{% url 'logout' %}">Bosh sahifa</a></h6>
+        <h6 class="card-subtitle mb-2 text-muted"> <a href="{% url 'book_create' %}">Kitob qo`shish</a></h6>
+
+  </div>
+</nav>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+    {% for book in books %}
+        <div class="card" style="..">
+            <div class="card-header">
+                <span class="font-weight-bold"><a href="{% url 'book_detail' book.slug %}"><h2>{{ book.title }}</h2></a></span>
+            </div>
+
+            {% if book.picture %}
+
+                <img class="text_center" src="{{ book.picture.url }}" alt="{{ book.title }}" width="500" height="600">
+            {%  endif %}
+               <div class="card-body">
+
+                <h5>Tafsilotlar:</h5>
+                <h5 class="card-subtitle mb-2 text-muted"><p>Kitob nomi: {{ book.title }}</p> </h5>
+                <h5 class="card-subtitle mb-2 text-muted"><p>Muallif: {{ book.author.name }} {{book.author.surname}}</p> </h5>
+                <h5 class="card-subtitle mb-2 text-muted"><p>Janr:   {{book.genre}}</p> </h5>
+               </div>
+             <div class="card-body">
+                 <a href="{% url 'book_detail' book.slug %}"><h4>kitobni o`qish</h4></a>
+            </div>
+        </div>
+
+        <br />
+    {% endfor %}
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+<title>Muallif kiritish</title>
+
+</head>
+
+<h2>{% extends 'kutubxona/base.html' %}</h2>
+
+{% block content %}
+
+<body>
+   <h3>Muallif qo`shish</h3>
+   <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit'>Qo`shish</button>
+
+    </form>
+
+</body>
+
+{% endblock content %}
+</html>

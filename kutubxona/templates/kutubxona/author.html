@@ -1,0 +1,19 @@
+<title>Mualliflar</title>
+<body>
+
+<h2>{% extends 'kutubxona/base.html' %}</h2>
+
+{% block content %}
+    <h2>Muallif:</h2>
+
+   <ul>
+      {%  for author in authors %}
+
+         <li>{{ author.name }}  {{ author.surname }}</li>
+
+
+      {% endfor %}
+  </ul>
+{% endblock content %}
+
+</body>
