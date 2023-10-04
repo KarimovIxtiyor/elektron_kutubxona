@@ -1,0 +1,1 @@
+web: gunicorn elektron_kutubxona.wsgi --log-file -
