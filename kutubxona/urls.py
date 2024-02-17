@@ -12,7 +12,7 @@ urlpatterns=[
   path('kutubxona/author/create',author_create_view,name='author_create'),
   path('book/<str:slug>/delete',BookDeleteView.as_view(),name='book_delete'),
   path('book/<str:slug>/update',BookUpdateView.as_view(),name='book_update'),
-  path('krish/',krish_views,name='krish'),
+  path('',krish_views,name='krish'),
   path('krish2/',krish2_views,name='krish2'),
 
 

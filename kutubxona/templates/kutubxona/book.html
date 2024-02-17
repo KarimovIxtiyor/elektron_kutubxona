@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>{% block title %}Elektron Kutubxona{% endblock title %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <!-- Bootstrap CSS -->
@@ -20,6 +21,10 @@
              placeholder="Ma'lumot izlash" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      <br>
+      <br>
+      <br>
+      <br>
       <h6 class="card-subtitle mb-2 text-muted"> <a href="{% url 'logout' %}">Bosh sahifa</a></h6>
         <h6 class="card-subtitle mb-2 text-muted"> <a href="{% url 'book_create' %}">Kitob qo`shish</a></h6>
 

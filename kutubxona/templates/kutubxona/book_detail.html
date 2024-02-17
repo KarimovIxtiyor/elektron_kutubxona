@@ -21,7 +21,7 @@
               {% if book.picture %}
                 <img class="text_center" src="{{ book.picture.url }}" alt="{{ book.title }}" width="500" height="600">
               {%  endif %}
-
+               <br>
               <h6 class="card-subtitle mb-2 text-muted">Muallif: {{ book.author }} | {{ book.genre }}</h6>
               <h6 class="card-subtitle mb-2 text-muted"> <a href="{% url 'book_update' book.slug %}">Kitobni tahrirlash |</a>
               <a href="{% url 'book_delete' book.slug %}">Kitobni o`chirish</a> </h6>
